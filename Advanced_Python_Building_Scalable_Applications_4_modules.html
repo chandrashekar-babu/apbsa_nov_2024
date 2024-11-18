@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Advanced Python&colon; Building Scalable Applications</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="advanced-python-building-scalable-applications">Advanced Python: Building Scalable Applications</h1>
+<hr>
+<h2 id="recommended-duration-4-modules-4-days--4-hours-per-day">Recommended duration: 4 modules (4 days @ 4 hours per day)</h2>
+<h3 id="course-description">Course Description:</h3>
+<p>This training program provides insight on leveraging various
+python modules, libraries and tools for developing scalable
+applications using Python.</p>
+<h3 id="target-audience-who-should-attend">Target Audience (who should attend):</h3>
+<ul>
+<li>Engineers who wish to develop large-scale python applications</li>
+</ul>
+<h3 id="course-track-advanced">Course Track: Advanced</h3>
+<h3 id="pre-requisites">Pre-requisites:</h3>
+<ul>
+<li>Participants should be comfortable with the following
+technologies:
+<ul>
+<li>Good understanding of python programming that include:
+<ul>
+<li>variables and datatypes</li>
+<li>flow control statements</li>
+<li>comprehensions and file I/O</li>
+<li>built-in data types (string, list, tuple, set, dict)</li>
+<li>functions, modules, namespaces and OOP</li>
+<li>Decorators, generators and <code>yield</code> semantics</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="course-objectives">Course Objectives:</h3>
+<ul>
+<li>Learn how to create multitasking/parallel processing applications
+in Python leveraging process and threads and understand
+their intricacies.</li>
+<li>Learn how to manage thread synchronization and IPCs using pythonic
+approach.</li>
+<li>Learn how to leverage serialization and data-persistence modules in python.</li>
+<li>Learn how to parse and process various file formats (XML, JSON, YAML, INI).</li>
+<li>Learn how to create network servers and clients.</li>
+<li>Learn how to interface with SQL-compliant and NoSQL databases.</li>
+<li>Learn how to implement RESTful API and expose them.</li>
+</ul>
+<p>What will NOT be covered:</p>
+<ul>
+<li>Basic concepts and idioms in Python (participants are
+expected to know the same).</li>
+<li>In-depth coverage on web application frameworks (due to
+schedule-constraints).</li>
+<li>GUI programming.</li>
+<li>Python extension libraries/modules.</li>
+<li>Data analytics/ML/Text processing related concepts</li>
+</ul>
+<h3 id="training-mode">Training mode:</h3>
+<ul>
+<li>
+<p>This training program is designed to be demonstration oriented.</p>
+</li>
+<li>
+<p>Most concepts will be explained via demonstrating code and
+participants are expected to learn by practicing the same.</p>
+</li>
+</ul>
+<h3 id="lab-requirements">Lab requirements:</h3>
+<ul>
+<li>As the training is highly lab oriented, each participant
+attending the training program must be provided with a
+computer/laptop with the following software installed:
+<ul>
+<li>Python 3.10+ installed for Windows/Linux/MacOS.</li>
+<li>VisualStudio Code with Python extensions enabled.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="course-agenda">Course Agenda</h2>
+<h3 id="module-1">Module 1</h3>
+<h4 id="threads-processes-and-coroutines">Threads, Processes and Coroutines</h4>
+<ul>
+<li>Concurrency Vs Parallelism: Choosing generator/coroutines Vs Threads/Processes</li>
+<li>Introduction to threads and processes.</li>
+<li>Python <code>threading</code> module API
+<ul>
+<li>Creating and managing threads.</li>
+<li>An overview on threading module.</li>
+<li>Using the <code>Thread</code> class and the <code>Timer</code> class.</li>
+<li>Active threads Vs. Daemon threads.</li>
+<li>Helper functions in the <code>threading</code> module.</li>
+</ul>
+</li>
+<li>Python <code>multiprocessing</code> module API
+<ul>
+<li>Multitasking using <code>multiprocessing.Process</code></li>
+<li><code>Process</code> Vs <code>Thread</code>: performance and design implications.</li>
+<li>Similarities and differences between <code>Process</code> and <code>Thread</code> class API</li>
+<li>Helper functions in the <code>multiprocessing</code> module.</li>
+</ul>
+</li>
+<li>Creating thread-pools and process-pools using <code>concurrent.futures</code> package</li>
+<li>Using <code>gevent</code> framework for massive I/O concurrency work-loads</li>
+<li>Implementing co-routines using Python built-in <code>async</code> support</li>
+<li>An overview on <code>uvloop</code> and <code>trio</code></li>
+<li>Best architectural design practices while choosing between different
+concurrency models.</li>
+</ul>
+<hr>
+<h3 id="module-2">Module 2</h3>
+<h4 id="thread--process-synchronization-mechanisms">Thread / Process synchronization mechanisms</h4>
+<ul>
+<li>Mutual exclusion patterns using <code>Lock</code> and <code>RLock</code>.</li>
+<li>Wait/notify patterns using  <code>Condition</code> and <code>Event</code>.</li>
+<li>Synchronizing flow-control using <code>Barrier</code>.</li>
+<li>Bandwidth management/control using <code>Semaphore</code> and <code>BoundedSemaphore</code>.</li>
+<li>Implementing Producer/Consumer patterns using <code>Queue</code>.</li>
+<li>Creating thread-local objects using <code>threading.local()</code>.</li>
+<li>Sharing/Exchanging data between processes
+<ul>
+<li>Streaming data using <code>Pipe</code> and <code>Queue</code></li>
+<li>Sharing counters and buffers using <code>Value</code> and <code>Array</code></li>
+<li>Sharing python lists and dictionaries using <code>Manager</code></li>
+<li>Creating and managing shared memory using <code>multiprocessing.shared_memory</code> features</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="module-3">Module 3</h3>
+<h4 id="network-socket-api">Network socket API</h4>
+<ul>
+<li>An overview of the <code>socket</code> module</li>
+<li>Creating network servers and clients
+using <code>socket</code> module</li>
+<li>Using gevent.sockets for concurrent socket connection handling</li>
+<li>Using <code>asyncio</code> for concurrent socket programming</li>
+</ul>
+<h4 id="marshalling-and-data-persistence">Marshalling and Data Persistence</h4>
+<ul>
+<li>An overview on <code>pickle</code>, <code>dill</code> and <code>shelve</code> modules</li>
+<li>Parsing common file formats: <code>CSV</code>, <code>JSON</code>, <code>YAML</code>, <code>TOML</code> and <code>MsgPack</code></li>
+<li>Parsing HTML and XML using <code>lxml</code></li>
+</ul>
+<h4 id="profiling-python-performance-and-memory-usage">Profiling Python Performance and Memory Usage</h4>
+<ul>
+<li>Using <code>cProfile</code> and <code>timeit</code> module</li>
+<li>Using <code>sys.getsizeof()</code>, <code>sys.getrefcount(), </code>sys.getswitchinterval()`</li>
+<li>Using the <code>line_profiler</code> and <code>Memray</code></li>
+</ul>
+<hr>
+<h3 id="module-4">Module 4</h3>
+<h4 id="connecting-to-databases">Connecting to databases</h4>
+<ul>
+<li>An overview on <strong>DBAPI</strong>
+<ul>
+<li>De-coupling database driver operations from high-level persistence API</li>
+<li>Use-case examples using SQLite3/MariaDB/PostgreSQL</li>
+</ul>
+</li>
+<li>Working with <strong>NoSQL</strong> databases</li>
+<li>Python API for <code>redis</code> and <code>MongoDB</code> (overview)</li>
+</ul>
+<h4 id="creating-web-apis">Creating Web APIs</h4>
+<ul>
+<li>An overview on RESTful API architecture</li>
+<li>Consuming web API using python <code>requests</code> and <code>httpx</code></li>
+<li>An overview on WSGI and ASGI</li>
+<li>WSGI / ASGI servers: <code>gunicorn</code> and <code>uvicorn</code></li>
+<li>An overview on <code>starlette</code> ASGI framework</li>
+<li>Creating and exposing web API using <code>FastAPI</code> framework</li>
+<li>Discovering web APIs using <code>/docs</code> (Open-API) and <code>/redocs</code> interface</li>
+<li>Creating validating models using <code>pydantic</code></li>
+<li>Security Considerations: Authentication and Authorization techniques</li>
+</ul>
+<h4 id="odds-and-ends">Odds and Ends</h4>
+<ul>
+<li>Building Scalable Web Applications: Best architectural practices
+<ul>
+<li>Case studies and examples of common web application architecture</li>
+<li>Containerization and Cloud Deployment of web applications</li>
+</ul>
+</li>
+</ul>
+<h4 id="q--a">Q &amp; A</h4>
+<hr>
+
+            
+            
+        </body>
+        </html>
