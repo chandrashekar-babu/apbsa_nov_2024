@@ -10,7 +10,19 @@ def testfn(count, delay):
     print(f"{t.name} has ended.")
 
 def joinall(threads, delay=None):
-    pass # TODO
+    if delay is None:
+        import sys
+        delay = sys.getswitchinterval()
+        
+    from collections import deque
+    threads = deque(threads)
+    while threads:
+        t = threads[0]
+        t.join(delay)
+        if not t.is_alive():
+            yield threads.popleft()
+        else:
+            threads.rotate(-1)
 
 if __name__ == '__main__':
     
@@ -21,9 +33,9 @@ if __name__ == '__main__':
         t.start()
         workers.append(t)
 
-    for t in joinall(workers):
+    for t in joinall(workers, 0.1):
         print(f"Thread {t.name} finished.")
-        
+
 
     #for t in workers:
     #    t.join()
