@@ -8,21 +8,21 @@ def counter(count, delay):
         sleep(delay)
 
 if __name__ == '__main__':
-    c1 = Thread(target=counter, name="test-thread", args=(5, 2))
+    c1 = Thread(target=counter, name="test-thread", args=(30, 0.5), daemon=True)
     c2 = Thread(target=counter, name="monitor-thread", kwargs={"count": 10, "delay": 1})
-    c3 = Thread(target=counter, name="counter-thread", kwargs=dict(count=10, delay=1))
+    c3 = Thread(target=counter, name="counter-thread", kwargs=dict(count=10, delay=.7))
 
+    #c1.daemon = False
     c1.start()
     c2.start()
     c3.start()
 
     counter(10, 0.5)
     print("main: counter complete")
-    c1.join()
-    print(c1, "completed")
-    c2.join()
-    print(c2, "completed")
-    c3.join()
-    print(c3, "completed")
-
-    
+    #c1.join()
+    #print(c1, "completed")
+    #c2.join()
+    #print(c2, "completed")
+    #c3.join()
+    #print(c3, "completed")
+    print("main program is complete...")
