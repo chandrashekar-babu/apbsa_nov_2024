@@ -1,0 +1,9 @@
+For numbers and strings: multiprocessing.Value()
+    num = Value('i', 100)
+    s = Value('s', "Hello world")
+
+
+For list and dictionaries: multiprocessing.Manager()
+    l = Manager().list()
+    d = Manager().dict()
+

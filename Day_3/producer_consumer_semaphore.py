@@ -1,9 +1,9 @@
 from threading import Thread, Semaphore, current_thread as current
+#from multiprocessing import Process as Thread, Semaphore, current_process as current
 from collections import deque
 from time import sleep
 from random import random, randint
 
-queue = deque()
 
 class SimpleQueue:
     def __init__(self, capacity=10):

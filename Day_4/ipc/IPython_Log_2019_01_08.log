@@ -1,0 +1,62 @@
+
+import threading
+dir(threading)
+import multiprocessing
+dir(multiprocessing)
+a = [10, 20, 30, 40, 50, 60]
+a
+def square(x): return x*x
+square(3)
+square(a)
+a
+a * a
+map(square, a)
+list(map(square, a))
+from time import sleep
+def square(x): 
+    sleep(1)
+    return x*x
+list(map(square, a))
+from multiprocessing import Pool
+p = Pool(10)
+p.map(square, a)
+from concurrent.futures import ProcessPoolExecutor as Executor
+e = Executor(max_workers=10)
+e.map(square, a)
+list(e.map(square, a))
+e
+def square(x):
+    sleep(10)
+    return x*x
+e.submit(square, 10)
+r = e.submit(square, 10)
+r.ready()
+r.result
+r.result()
+r = e.submit(square, 10)
+r.result()
+def square(x):
+    sleep(10)
+    return x*x
+square(10)
+r = e.submit(square, 6)
+r
+r.result()
+def cube(x):
+    sleep(10)
+    return x*x*x
+r = e.submit(cube, 3)
+
+from concurrent.futures import ProcessPoolExecutor as Executor
+e = Executor(max_workers=4)
+from time import sleep
+def cube(x):
+    sleep(10)
+    return x*x*x
+r = e.submit(cube, 6)
+r.result()
+get_ipython().run_line_magic('pinfo', 'r.result')
+r.done
+r.done()
+r.cancel()
+e

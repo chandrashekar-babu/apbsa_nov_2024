@@ -1,0 +1,25 @@
+(lp0
+I10
+aI20
+aI30
+aI40
+a.(dp0
+S'city'
+p1
+S'Mumbai'
+p2
+sS'name'
+p3
+S'Sam'
+p4
+s.(icar
+Car
+p0
+(dp1
+S'name'
+p2
+S'Toyota'
+p3
+sb.S'this is a test string'
+p0
+.
