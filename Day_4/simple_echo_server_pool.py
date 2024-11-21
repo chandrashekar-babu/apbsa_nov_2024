@@ -1,5 +1,7 @@
+from gevent import monkey; monkey.patch_all()
 from socket import socket, AF_INET, SOCK_STREAM, SOMAXCONN
-from threading import Thread
+from concurrent.futures import ThreadPoolExecutor as Executor
+#from concurrent.futures import ProcessPoolExecutor as Executor
 
 def echo_handler(conn):
     ins, outs = conn.makefile("r"), conn.makefile("w")
@@ -26,10 +28,10 @@ if __name__ == '__main__':
     sock.listen(SOMAXCONN)
     print(f"Server socket is setup, waiting for client connections...")
 
-    while True:
-        client, address = sock.accept()
-        print(f"Accepted connection from {address}, {client=}")
-        worker = Thread(target=echo_handler, args=(client,))
-        worker.start()
-       
+    with Executor(max_workers=5) as workers:
+        while True:
+            client, address = sock.accept()
+            print(f"Accepted connection from {address}, {client=}")
+            workers.submit(echo_handler, client)
+
         

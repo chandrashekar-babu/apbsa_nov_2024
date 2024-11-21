@@ -1,19 +1,11 @@
 from socket import socket, AF_INET, SOCK_STREAM, SOMAXCONN
 from threading import Thread
 
-def echo_handler(conn):
-    ins, outs = conn.makefile("r"), conn.makefile("w")
-    try:
-        for line in ins:
-            print(f"Client sent: {line}")
-            print(line.upper(), file=outs, flush=True)
-            if "exit" in line:
-                break
-    except ConnectionResetError:
-        print("Client closed the connection...")
-    finally:
-        ins.close()
-        outs.close()
+def time_handler(conn):
+    from time import ctime
+    outs = conn.makefile("w")
+    print(ctime(), file=outs, flush=True)
+    outs.close()
 
 if __name__ == '__main__':
     HOST = "localhost"
@@ -29,7 +21,7 @@ if __name__ == '__main__':
     while True:
         client, address = sock.accept()
         print(f"Accepted connection from {address}, {client=}")
-        worker = Thread(target=echo_handler, args=(client,))
+        worker = Thread(target=time_handler, args=(client,))
         worker.start()
        
         
