@@ -43,23 +43,23 @@ def bar(data):
 #d = {}
 #d = dict()
 
+if __name__ == '__main__':
+    m = Manager()
+    d = m.dict()
 
-m = Manager()
-d = m.dict()
+    d["name"] = "dummy"
+    d["value"]= 200
 
-d["name"] = "dummy"
-d["value"]= 200
+    t1 = Process(target=foo, args=(d,))
+    t2 = Process(target=bar, args=(d,))
 
-t1 = Process(target=foo, args=(d,))
-t2 = Process(target=bar, args=(d,))
+    t1.start()
+    t2.start()
 
-t1.start()
-t2.start()
+    t1.join()
+    t2.join()
 
-t1.join()
-t2.join()
-
-print((dict(d), type(d)))
+    print((dict(d), type(d)))
 
 
 #p1 = Process(target=foo, args=(d,))
