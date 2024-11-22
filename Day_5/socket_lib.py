@@ -15,7 +15,7 @@ class TCPServer:
         else:
             raise InvalidWorkerType("worker must be either 'thread', 'process' or 'gevent'")
 
-        self.executor = Executor       
+        self._executor = Executor       
         self.max_workers = max_workers
       
 
@@ -27,14 +27,14 @@ class TCPServer:
         self.quit = False
 
     def run_forever(self):
-        self.workers = self.executor(max_workers=self.max_workers)
+        self._workers = self._executor(max_workers=self.max_workers)
         while not self.quit:
             client, client_info = self._listener.accept()
-            self.workers.submit(self.handler, client, client_info)
+            self._workers.submit(self.handler, client, client_info)
 
     def shutdown(self):
         from socket import SHUT_RD
-        self.workers.shutdown()
+        self._workers.shutdown()
         self._listener.shutdown(SHUT_RD)
 
     def __enter__(self):

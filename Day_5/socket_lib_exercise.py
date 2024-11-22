@@ -21,4 +21,4 @@ if __name__ == '__main__':
             server.run_forever()
 
     except KeyboardInterrupt:
-        server.shutdown()
+        print("Keyboard interrupt received, server shutdown initiated.")
