@@ -31,7 +31,7 @@ urls = [
     "https://www.chandrashekar.info/",
     "https://cisco.com/",
     "https://www.python.org/",
-    "https://www.dhrona.net/",
+    "https://www.gnu.org/",
     "https://www.kernel.org/",
     "https://www.debian.org/",
     "https://www.moonranger.net/"
