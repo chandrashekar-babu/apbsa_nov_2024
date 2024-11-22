@@ -1,0 +1,121 @@
+
+import shelve
+a = shelve.open("squares")
+a["4545"]
+a["9000"]
+import sys
+sys.getsizeof(a)
+a["cities"] = ["Bengaluru", "Mumbai", "Kolkatta"]
+a["cities"]
+a["cities"][0]
+a["cities"][0] = "Chennai"
+a["cities"]
+a["cities"][0] = "Chennai"
+a.sync()
+a.close()
+a = shelve.open("squares")
+a["cities"]
+a["cities"]
+a["cities"][0]
+a["cities"][0] = "Chennai"
+c = a["cities"]
+c
+c[0] = "Chennai"
+c
+a["cities"] = c
+from pymongo import MongoClient
+get_ipython().run_line_magic('pinfo', 'MongoClient')
+client = MongoClient()
+client
+client
+s = client["staff"]
+s
+d = client.testdb
+d
+s
+e = s.employees
+e
+e.insert_one({"name": "adam", "role": "developer"})
+e.insert_one({"name": "smith", "role": "developer"})
+data = [{"aaa": 1000}, {"bbbb": 20000}, {"name": "mary", "dept": "IT"}]
+data
+e.insert_many(data)
+e.find_one({"dept": "IT"})
+e.find()
+list(e.find())
+e.find_one_and_delete({"aaa": 1000})
+list(e.find())
+e.find_one()
+r = e.find_one()
+r
+import json
+json.dumps(r)
+import ujson as json
+json.dumps(r)
+import bson.json_util as json
+json.dumps(r)
+json.loads('{"_id": {"$oid": "5c4fee7e87162608f2ee332c"}, "name": "adam", "role": "developer"}')
+import sqlite3
+get_ipython().run_line_magic('pinfo', 'sqlite3.connect')
+conn = sqlite3.connect("mydb.dat")
+conn
+create_sql = """
+CREATE TABLE employee(id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      name VARCHAR(32),
+                      dept VARCHAR(32))
+"""
+conn.execute(create_sql)
+c = conn.cursor()
+c
+insert_sql = """
+INSERT INTO employee(name, dept) VALUES(?,?)
+"""
+c.execute(insert_sql, ("John", "Support"))
+c.execute(insert_sql, ("Adrian", "Support"))
+c.execute(insert_sql, ("Adam", "Developer"))
+conn.commit()
+conn.close()
+conn = sqlite3.connect("mydb.dat")
+select_sql = "SELECT * FROM employee"
+conn.cursor()
+c = conn.cursor()
+c.execute(select_sql)
+c
+for i, n, d in c:
+    print(i, n, d)
+    
+select_sql = "SELECT * FROM employee sdfds"
+c.execute(select_sql)
+list(c)
+select_sql = "SELECT * FROM employee @$@$@#$@#^ $% $ sdfds"
+c.execute(select_sql)
+from time import strftime
+get_ipython().run_line_magic('pinfo', 'strftime')
+strftime("%Y%m%d%H%M%S"
+)
+strftime("%Y%m%d%H%M%S")
+strftime("%Y%m%d%H%M%S")
+import pexpect
+get_ipython().run_line_magic('pinfo', 'pexpect.spawn')
+from paramiko import SSHClient
+from paramiko import Transport
+t = Transport(("192.168.56.101", 22))
+t.connect(username="root", password="welcome")
+t
+sftp = t.open_sftp_client()
+sftp.listdir("/usr/local")
+sftp.chdir("/root")
+sftp.getcwd()
+get_ipython().run_line_magic('ls', '')
+sftp.put("car.py", "/tmp/a.txt")
+sftp.listdir("/tmp")
+sftp.get("/etc/passwd", "p.txt")
+get_ipython().run_line_magic('cat', 'p.txt')
+sftp.unlink("/tmp/a.txt")
+infile = sftp.open("/etc/passwd")
+infile.readline()
+infile.readline()
+infile.readline()
+for line in infile:
+    print(line)
+    
