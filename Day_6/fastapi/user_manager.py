@@ -25,6 +25,7 @@ async def get_users():
 
 @app.post("/users")
 async def add_user(user: User):
+    print("user => ", user)
     users.add(user)
 
 @app.get("/users/{name}")
