@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: userdb
+Version: 0.0.1
+Summary: A simple database abstraction library
+Home-page: https://github.com/chandrashekar_babu/userdb
+Author: Chandrashekar Babu
+Author-email: training@chandrashekar.info
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

@@ -1,0 +1,45 @@
+
+from simple_tasks import add, testfn
+add(10, 20)
+add.delay(10, 20)
+r = add.delay(10, 20)
+r
+r.get()
+r.status
+r.status
+r.result
+r.status
+r.result
+results = []
+for i in range(10):
+    r = add.delay(i, 10)
+    result.append(r)
+    
+for i in range(10):
+    r = add.delay(i, 10)
+    results.append(r)
+    
+for i in range(10):
+    r = add.delay(i, 10)
+    results.append(r)
+    
+
+from simple_tasks import add, testfn
+add(10, 20)
+r = add.delay(10, 20)
+results = []
+for i in range(10):
+    r = add.delay(i, 10)
+    results.append(r)
+    
+from socket import socket, AF_INET
+from socket import socket, AF_INET, SOCK_STREAM
+sock = socket(AF_INET, SOCK_STREAM)
+sock.connection(("192.168.1.130", 7654))
+sock.connect(("192.168.1.130", 7654))
+outs = sock.makefile("wb")
+outs
+import pickle
+a = [11, "sdfsdf", 65.43, (22, 33, 44) ]
+pickle.dump(a, outs)
+outs.flush()
